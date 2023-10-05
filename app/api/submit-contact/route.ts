@@ -74,47 +74,27 @@ export async function POST(request: NextRequest) {
       },
     );
   }
-  const result = await fetch(
-    `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.HUBSPOT_PORTAL_ID}/${process.env.HUBSPOT_FORM_ID}`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        context: {
-          hutk: request.cookies.get('hubspotutk')?.value,
-          pageUri: request.headers.get('referer'),
-        },
-        fields: [
-          {
-            objectTypeId: '0-1',
-            name: 'lastname',
-            value: lastname,
-          },
-          {
-            objectTypeId: '0-1',
-            name: 'firstname',
-            value: firstname,
-          },
-          {
-            objectTypeId: '0-1',
-            name: 'company',
-            value: company,
-          },
-          {
-            objectTypeId: '0-1',
-            name: 'email',
-            value: email,
-          },
-          {
-            objectTypeId: '0-1',
-            name: 'message',
-            value: message,
-          },
-        ],
-      }),
+    const slackMessage = {
+    text: `新しいお問い合わせがありました:
+姓: ${lastname}
+名: ${firstname}
+会社名: ${company}
+メールアドレス: ${email}
+メッセージ:
+${message}`
+  };
+
+  const result = await fetch(process.env.SLACK_WEBHOOK_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
     },
-  ).then((res) => res.json());
-  return NextResponse.json(result);
+    body: JSON.stringify(slackMessage),
+  });
+
+  if (result.ok) {
+    return NextResponse.json({ status: 'success' });
+  } else {
+    return NextResponse.json({ status: 'error', message: 'Slackへの投稿に失敗しました' });
+  }
 }

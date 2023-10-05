@@ -2,7 +2,7 @@
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono',
     'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono',
     'Courier New', monospace;
-  --color-text-main: #333;
+  --color-text-main: #333333;
   --color-text-sub: #999;
   --color-text-unpainted: #fff;
   --color-text-error: #f33;
@@ -10,11 +10,11 @@
   --color-bg-sub: #f3f3f3;
   --color-bg-code: #fafafa;
   --color-bg-painted: #333;
-  --color-border-dark: #333;
+  --color-border-dark: #bbb2ff;
   --color-border: #ddd;
   --color-border-light: #f3f3f3;
   --color-current: #eee;
-  --color-button-primary: #333;
+  --color-button-primary: #1b1d52;
   --border-radius: 4px;
 }
 

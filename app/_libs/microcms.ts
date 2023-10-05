@@ -48,6 +48,19 @@ export type Meta = {
   canonical?: string;
 };
 
+// 資料の型定義
+export type Document = {
+  id: string;
+  createdAt: MicroCMSDate;
+  updatedAt: MicroCMSDate;
+  publishedAt: MicroCMSDate;
+  revisedAt: MicroCMSDate;
+  title: string;
+  explain: string;
+  url: string;
+} & MicroCMSContentId & MicroCMSDate;
+
+
 export type Article = News & MicroCMSContentId & MicroCMSDate;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
@@ -145,4 +158,15 @@ export const getMeta = async (queries?: MicroCMSQueries) => {
     .catch(() => null);
 
   return data;
+};
+
+// 事業内容一覧を取得
+export const getDocumentList = async (queries?: MicroCMSQueries) => {
+  const listData = await client
+    .getList<Document>({
+      endpoint: 'document',
+      queries,
+    })
+    .catch(notFound);
+  return listData;
 };

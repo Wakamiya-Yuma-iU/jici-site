@@ -15,14 +15,14 @@ export default async function Page() {
     <>
       <section className={styles.top}>
         <div>
-          <h1 className={styles.title}>テクノロジーの力で世界を変える</h1>
+          <h1 className={styles.title}>iU自治委員会</h1>
           <p className={styles.description}>
-            私たちは市場をリードしているグローバルテックカンパニーです。
+            学友会員すべてに利益ある活動、それを支えるための運営・管理を図ります。
           </p>
         </div>
         <Image
           className={styles.bgimg}
-          src="/img-mv.jpg"
+          src="/img-mav.jpg"
           alt=""
           width={3600}
           height={1200}
@@ -39,18 +39,16 @@ export default async function Page() {
       <section className={styles.section}>
         <div className={styles.horizontal}>
           <div>
-            <h2 className={styles.sectionTitleEn}>Business</h2>
-            <p className={styles.sectionTitleJa}>事業内容</p>
+            <h2 className={styles.sectionTitleEn}>Activities</h2>
+            <p className={styles.sectionTitleJa}>活動の詳細</p>
             <p className={styles.sectionDescription}>
-              当社は、次世代テクノロジーの研究開発・製造・販売を行う革新的な企業です。
-              <br />
-              AI、ロボット工学、自律システムなど、幅広い分野でのソリューション提供を通じて、社会の進化と未来の創造に貢献します。
+              週に一度の定例会議、3階の学友会倉庫の管理、任意サークルの設立受付、公認サークルの審議と認可など、さまざまな活動を展開しています。
             </p>
-            <ButtonLink href="/business">もっとみる</ButtonLink>
+            <ButtonLink href="/activities">もっとみる</ButtonLink>
           </div>
           <Image
             className={styles.businessImg}
-            src="/img-business.png"
+            src="/image1.jpg"
             alt=""
             width={1024}
             height={1024}
@@ -68,34 +66,26 @@ export default async function Page() {
               height={4000}
             />
             <div>
-              <h2 className={styles.sectionTitleEn}>About Us</h2>
-              <p className={styles.sectionTitleJa}>私たちについて</p>
+              <h2 className={styles.sectionTitleEn}>Organization</h2>
+              <p className={styles.sectionTitleJa}>組織体制</p>
               <p className={styles.sectionDescription}>
-                「テクノロジーの力で世界を変える」をミッションに掲げ、日々活動をしています。
+                本部長１名・副本部長１名・会計２名、そして委員３名から成り立っています。
               </p>
               <dl className={styles.info}>
-                <dt className={styles.infoTitle}>社名</dt>
-                <dd className={styles.infoDescription}>株式会社Simple</dd>
+                <dt className={styles.infoTitle}>名称</dt>
+                <dd className={styles.infoDescription}>iU自治委員会</dd>
               </dl>
               <dl className={styles.info}>
-                <dt className={styles.infoTitle}>設立</dt>
-                <dd className={styles.infoDescription}>2023年4月</dd>
+                <dt className={styles.infoTitle}>活動開始</dt>
+                <dd className={styles.infoDescription}>20XX年4月</dd>
               </dl>
               <dl className={styles.info}>
-                <dt className={styles.infoTitle}>所在地</dt>
+                <dt className={styles.infoTitle}>担当場所</dt>
                 <dd className={styles.infoDescription}>
-                  〒000-0000
+                  iUキャンパス3階
                   <br />
-                  東京都渋谷区渋谷1-1-1
+                  学友会部屋
                 </dd>
-              </dl>
-              <dl className={styles.info}>
-                <dt className={styles.infoTitle}>代表者</dt>
-                <dd className={styles.infoDescription}>鈴木 太郎</dd>
-              </dl>
-              <dl className={styles.info}>
-                <dt className={styles.infoTitle}>資本金</dt>
-                <dd className={styles.infoDescription}>1,000万円</dd>
               </dl>
             </div>
           </div>
@@ -104,18 +94,16 @@ export default async function Page() {
       <section className={styles.section}>
         <div className={styles.horizontal}>
           <div>
-            <h2 className={styles.sectionTitleEn}>We are hiring</h2>
-            <p className={styles.sectionTitleJa}>採用情報</p>
+            <h2 className={styles.sectionTitleEn}>Initiatives</h2>
+            <p className={styles.sectionTitleJa}>さらなる取り組み</p>
             <p className={styles.sectionDescription}>
-              当社では、チャレンジ精神を持った人材を求めています。
-              <br />
-              新しいアイデアを出し合い、成長する環境で活躍したい方は、ぜひご応募ください。当社でのキャリアを築きながら、技術の最前線で力を発揮しましょう。
+              学生たちの大学生活の質を向上させるための様々な活動を展開しています。
             </p>
-            <ButtonLink href="">採用情報へ</ButtonLink>
+            <ButtonLink href="/initiatives">もっとみる</ButtonLink>
           </div>
           <Image
             className={styles.hiringImg}
-            src="/img-hiring.jpg"
+            src="/img-initiatives.jpg"
             alt=""
             width={960}
             height={960}

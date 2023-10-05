@@ -36,9 +36,8 @@
 
 .news {
   position: relative;
-  background-color: #fff;
   width: 840px;
-  margin: -40px auto 0;
+  margin: 40px auto 0;
   padding: 24px 40px;
   border-radius: var(--border-radius);
 }

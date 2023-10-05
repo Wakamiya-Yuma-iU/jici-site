@@ -15,12 +15,12 @@ export default function Menu() {
         <ul className={styles.items}>
           <li>
             <Link href="/news" onClick={close}>
-              ニュース
+              お知らせ
             </Link>
           </li>
           <li>
             <Link href="/business" onClick={close}>
-              事業内容
+              活動内容
             </Link>
           </li>
           <li>

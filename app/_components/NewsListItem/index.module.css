@@ -1,5 +1,5 @@
 .list {
-  border-bottom: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-dark);
 }
 .list:last-child {
   border-bottom: none;
