@@ -100,3 +100,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ status: 'error', message: 'Slackへの投稿に失敗しました' });
   }
 }
+
+export const runtime = 'edge'
