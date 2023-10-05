@@ -75,16 +75,18 @@ export async function POST(request: NextRequest) {
     );
   }
     const slackMessage = {
-    text: `新しいお問い合わせがありました:
-姓: ${lastname}
-名: ${firstname}
-会社名: ${company}
-メールアドレス: ${email}
-メッセージ:
-${message}`
+    text: [
+      '新しいお問い合わせがありました',
+    `姓: ${lastname}`,
+    `名: ${firstname}`,
+    `団体名: ${company}`,
+    `メールアドレス: ${email}`,
+    `メッセージ:`, 
+    `${message}`
+    ].join('\n')
   };
 
-  const result = await fetch(process.env.SLACK_WEBHOOK_URL, {
+  const result = await fetch(process.env.SLACK_WEBHOOK_URL as string, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
