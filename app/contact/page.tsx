@@ -2,7 +2,6 @@ import styles from './page.module.css';
 import ContactForm from '@/app/_components/ContactForm';
 export const runtime = 'edge';
 
-
 export default function Page() {
   return (
     <div className={styles.container}>

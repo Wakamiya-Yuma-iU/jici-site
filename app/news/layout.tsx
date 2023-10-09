@@ -2,7 +2,7 @@ import Hero from '@/app/_components/Hero';
 import Sheet from '@/app/_components/Sheet';
 
 export const metadata = {
-  title: 'ニュース｜シンプルなコーポレートサイト',
+  title: 'ニュース｜学友会【iU 情報経営イノベーション専門職大学】',
 };
 
 type Props = {
