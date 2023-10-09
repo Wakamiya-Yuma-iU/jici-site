@@ -1,4 +1,5 @@
 'use client';
+export const runtime = 'edge';
 import React, { useState } from 'react';
 import {
   Accordion,
@@ -9,7 +10,6 @@ import {
   TableCell,
   TableRow,
   Typography,
-  Box,
   IconButton,
   Paper,
 } from '@mui/material';
@@ -101,13 +101,37 @@ export default function Rental() {
           選択中のアイテム
         </Typography>
         {selectedItems.length > 0 ? (
-          selectedItems.map((item) => (
-            <Typography key={item.item.item_id}>
-              {item.item.name} x{item.selectedQuantity}
-            </Typography>
-          ))
+          <>
+            {selectedItems.map((item) => (
+              <Typography key={item.item.item_id}>
+                {item.item.name} x{item.selectedQuantity}
+              </Typography>
+            ))}
+            {/* 3つのプレースホルダーから選択されているアイテムの数を引いた数だけプレースホルダーを表示 */}
+            {Array.from({ length: 3 - selectedItems.length }).map((_, index) => (
+              <Typography
+                key={'placeholder_' + index}
+                color="textSecondary"
+                style={{ visibility: 'hidden' }}
+              >
+                プレースホルダー
+              </Typography>
+            ))}
+          </>
         ) : (
-          <Typography color="textSecondary">アイテムが選択されていません</Typography>
+          <>
+            <Typography color="textSecondary">アイテムが選択されていません</Typography>
+            {/* 2つ追加のプレースホルダーを表示して、高さを一定に保つ */}
+            {Array.from({ length: 2 }).map((_, index) => (
+              <Typography
+                key={'placeholder_' + index}
+                color="textSecondary"
+                style={{ visibility: 'hidden' }}
+              >
+                プレースホルダー
+              </Typography>
+            ))}
+          </>
         )}
       </Paper>
 
