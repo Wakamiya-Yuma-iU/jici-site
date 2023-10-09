@@ -2,7 +2,7 @@ import Hero from '@/app/_components/Hero';
 import Sheet from '@/app/_components/Sheet';
 
 export const metadata = {
-  title: '事業内容｜学友会【iU 情報経営イノベーション専門職大学】',
+  title: '委員会一覧｜学友会【iU 情報経営イノベーション専門職大学】',
 };
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <>
-      <Hero title="Business" sub="事業内容" />
+      <Hero title="org-list" sub="委員会一覧" />
       <Sheet>{children}</Sheet>
     </>
   );
