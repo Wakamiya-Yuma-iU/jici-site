@@ -1,5 +1,6 @@
 import styles from './page.module.css';
-import ContactForm from '@/app/_components/ContactForm';
+import Rental, { mockData as equipments } from '@/app/_components/Rental';
+
 export const runtime = 'edge';
 
 export default function Page() {
@@ -10,7 +11,7 @@ export default function Page() {
         <br />
         内容確認後、担当者より通常3営業日以内にご連絡いたします。
       </p>
-      <ContactForm />
+      <Rental equipments={equipments} />
     </div>
   );
 }

@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         status: 'error',
-        message: '会社名を入力してください',
+        message: '会社名・団体名を入力してください',
       },
       {
         status: 400,
@@ -74,16 +74,16 @@ export async function POST(request: NextRequest) {
       },
     );
   }
-    const slackMessage = {
+  const slackMessage = {
     text: [
       '新しいお問い合わせがありました',
-    `姓: ${lastname}`,
-    `名: ${firstname}`,
-    `団体名: ${company}`,
-    `メールアドレス: ${email}`,
-    `メッセージ:`, 
-    `${message}`
-    ].join('\n')
+      `姓: ${lastname}`,
+      `名: ${firstname}`,
+      `団体名: ${company}`,
+      `メールアドレス: ${email}`,
+      `メッセージ:`,
+      `${message}`,
+    ].join('\n'),
   };
 
   const result = await fetch(process.env.SLACK_WEBHOOK_URL as string, {

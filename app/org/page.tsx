@@ -4,7 +4,6 @@ import styles from './page.module.css';
 import ButtonLink from '@/app/_components/ButtonLink';
 export const runtime = 'edge';
 
-
 type Props = {
   searchParams: {
     dk: string;
@@ -20,7 +19,7 @@ export default async function Page({ searchParams }: Props) {
   return (
     <div className={styles.container}>
       {data.contents.length === 0 ? (
-        <p className={styles.empty}>事業内容が登録されていません。</p>
+        <p className={styles.empty}>委員会が登録されていません。</p>
       ) : (
         <ul>
           {data.contents.map((business) => (
@@ -38,7 +37,7 @@ export default async function Page({ searchParams }: Props) {
                 <dd className={styles.description}>{business.description}</dd>
                 <dd className={styles.action}>
                   <ButtonLink href={business.link} isExternal>
-                    サービスサイトへ
+                    委員会のサイトへ
                   </ButtonLink>
                 </dd>
               </dl>
