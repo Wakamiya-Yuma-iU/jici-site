@@ -53,7 +53,7 @@ interface SelectedItem {
   selectedQuantity: number;
 }
 
-const mockData: Equipment[] = [
+export const mockData: Equipment[] = [
   { item_id: 1, name: 'test_i_1', description: 'test', quantity: 3, category_id: 1, location: 1 },
   { item_id: 2, name: 'test_i_2', description: '', quantity: 3, category_id: 1, location: 1 },
   {
